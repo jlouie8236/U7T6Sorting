@@ -85,4 +85,40 @@ public class Sort
     }
     System.out.println("Number of iterations: " + counter);
   }
+
+  public static void selectionSortDescending(int[] numbers)
+  {
+    for (int j = 0; j < numbers.length - 1; j++)
+    {
+
+      int minIndex = j;
+      for (int k = j + 1; k < numbers.length; k++)
+      {
+        if (numbers[k] > numbers[minIndex])
+        {
+          minIndex = k;
+
+        }
+      }
+      int temp = numbers[j];
+      numbers[j] = numbers[minIndex];
+      numbers[minIndex] = temp;
+    }
+  }
+
+  public static void insertionSortDescending(int[] numbers)
+  {
+    for (int j = 1; j < numbers.length; j++)
+    {
+      int temp = numbers[j];
+      int possibleIndex = j;
+      while (possibleIndex > 0 && temp > numbers[possibleIndex - 1])
+      {
+        numbers[possibleIndex] = numbers[possibleIndex - 1];
+        possibleIndex--;
+      }
+      numbers[possibleIndex] = temp;
+    }
+  }
+
 }
